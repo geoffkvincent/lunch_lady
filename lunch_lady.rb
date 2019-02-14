@@ -57,19 +57,18 @@ class LunchLady
     begin
       puts "What is your choice for a main dish?"
       MAIN_DISHES.each_with_index do |dish, i|
-      puts "#{i + 1}. #{dish[:name]} #{dish[:price]}"
-    end
+        puts "#{i + 1}. #{dish[:name]} #{dish[:price]}"
+      end
 
-    input = gets.strip.to_i
+      input = gets.strip.to_i
+      raise unless input > 0 && input <= MAIN_DISHES.length
 
-    raise unless input > 0 && input <= MAIN_DISHES.length
-
-    fellow.dishes << Dish.new(
-      MAIN_DISHES[input - 1][:name],
-      MAIN_DISHES[input - 1][:price]
-    )
+      fellow.dishes << Dish.new(
+                        MAIN_DISHES[input - 1][:name],
+                        MAIN_DISHES[input - 1][:price]
+      )
     rescue
-    retry
+      retry
     end
   end
 
