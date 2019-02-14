@@ -113,6 +113,3 @@ class LunchLady
  lunch_lady.repeat_customer_order(0)
  lunch_lady.repeat_customer_order(1)
  lunch_lady.repeat_customer_order(2)
-
- test
- 
